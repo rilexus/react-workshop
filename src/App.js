@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import StateChange from "./topics/re-render/StateChange";
+import PropsChange from "./topics/re-render/PropsChange";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/*<StateChange/>*/}
+      <PropsChange/>
     </div>
   );
 }
+
+const A = () => {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: "red"
+    }
+  }, "2", /*#__PURE__*/React.createElement("div", null, "3"));
+};
+
+
+
+/*#__PURE__*/
+console.log(React.createElement(A, null));
 
 export default App;
