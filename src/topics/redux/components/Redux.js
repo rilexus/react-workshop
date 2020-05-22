@@ -2,6 +2,14 @@ import React from 'react';
 import {StoreProvider} from "../store/provider/StoreProvider";
 import { Some } from "./Some";
 import {createStore} from "../store/createStore";
+import {
+  loggerMiddleware,
+  middleware1,
+  middleware2,
+  middleware3,
+  promiseMiddleware,
+  thunkMiddleware
+} from "../middlewares";
 
 const initState = {
   greeting: "init",
@@ -26,30 +34,18 @@ const reducer = (state = initState, action) => {
 
 }
 
-const middleware1 = ({dispatch}) => next => action => {
-  console.log("middleware1, ", action)
-  return next(action)
-}
-
-const middleware2 = (store) => {
-  return next => {
-    return action => {
-      console.log("middleware2, ", action)
-      return next(action)
-    }
-  }
-}
-const middleware3 = ({dispatch}) => {
-  return next => {
-    return action => {
-      const {type} = action
-      console.log("middleware3, ", action)
-      return next(action)
-    }
-  }
-}
-
-const store = createStore(reducer, undefined, [middleware1, middleware2, middleware3])
+const store = createStore(
+  reducer,
+  undefined,
+  [
+    thunkMiddleware,
+    promiseMiddleware,
+    loggerMiddleware,
+    middleware1,
+    middleware2,
+    middleware3
+  ]
+)
 
 const Redux = () => {
   return (
