@@ -2,9 +2,7 @@ import React from 'react';
 import {connect} from "../store/connect";
 
 const _Some = ({greeting, stateCount, greet}) => {
-  const handleClick = () => {
-    greet('Hallo', stateCount + 1)
-  }
+
   return (
     <div>
       <div>
@@ -13,7 +11,7 @@ const _Some = ({greeting, stateCount, greet}) => {
       <div>
         in state count: {stateCount}
       </div>
-      <button onClick={handleClick}>dispatch</button>
+      <button onClick={() => greet('Hallo', stateCount + 1)}>dispatch</button>
     </div>
   );
 };

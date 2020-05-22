@@ -8,18 +8,18 @@ export const useStoreContext = () => {
 }
 
 export const StoreProvider = ({store, children}) => {
-  const [state, setState] = useState(false)
+  const [_, setState] = useState(false)
 
   useEffect(() => {
-    const handleStateUpdate = (newState) => {
-      setState((p) => !p)
-    }
-    store.subscribe(handleStateUpdate)
+    const reRender = () => setState((prevState) => !prevState)
+
+    store.subscribe(reRender)
     return () => {
-      store.unsubscribe(handleStateUpdate)
+      store.unsubscribe(reRender)
     }
 
   },[]);
+
   return (
     <Context.Provider value={{
       state: store.getState(),
