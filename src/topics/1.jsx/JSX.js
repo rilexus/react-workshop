@@ -5,6 +5,7 @@ import React from 'react';
 
 // Copy & Past the following component
 /*
+
   function A({p}){
     return (
       <div>
@@ -13,8 +14,21 @@ import React from 'react';
     )
   }
   <A/>
+
+
  */
 // what do you see?
+/*
+
+function A({p}) {
+  return React.createElement("div", null, "Hallo World");
+}
+
+React.createElement(A, null);
+
+ */
+
+
 
 // Change the component name to lower case. What do you see?
 
@@ -47,19 +61,45 @@ function A({p}){
 }
 <A/>
  */
-// function B(){
-//   return (
-//     <div>
-//       B
-//     </div>
-//   )
-// }
-//
-// function A({p}){
-//   return (
-//     <div>
-//       <B/>
-//     </div>
-//   )
-// }
-// <A/>
+
+/*
+
+function B(){
+  return (
+    <div>
+      B
+    </div>
+  )
+}
+
+function A({p}){
+  return (
+    <div>
+      <B p={1}/>
+      <B p={2}/>
+      <B p={3}/>
+    </div>
+  )
+}
+<A/>
+
+ */
+
+
+/*
+
+function B({p}) {
+  return React.createElement("div", null, "B");
+}
+
+function A({p}) {
+  return React.createElement(
+  "div",
+  null,
+  React.createElement(B, {p: 1}),
+  React.createElement(B, {p: 2}),
+  React.createElement(B, {p: 3}));
+}
+React.createElement(A, null);
+
+ */
