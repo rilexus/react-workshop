@@ -1,0 +1,36 @@
+.product {
+  font-family: Helvetica;
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: .9rem;
+  }
+
+  &__description {
+    font-size: 2rem;
+    color: #858585;
+  }
+
+  &__price {}
+  &__variant {}
+
+  &__color {
+    &--red {
+      color: red;
+    }
+    &--blue {
+      color: blue;
+    }
+    &--green {
+      color: green;
+    }
+  }
+
+  &__size {
+    font-weight: 700;
+  }
+}

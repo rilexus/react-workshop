@@ -22,7 +22,7 @@ const UseEffect = () => {
   }, [])
 
   useEffect(() => {
-    console.log(scrollTop)
+    console.log(`scrollTop: ${scrollTop}`)
   }, [scrollTop])
 
   return (

@@ -1,0 +1,10 @@
+{
+  "title":  "Title",
+  "subtitle":  "subtitle",
+  "description":  "description",
+  "price": 100,
+  "variant":  {},
+  "color": "red",
+  "available": true,
+  "size": "XXL"
+}

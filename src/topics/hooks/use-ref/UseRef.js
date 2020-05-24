@@ -3,12 +3,14 @@ import React, {useEffect, useRef} from 'react';
 // Exercise: create a custom useConstant hook, which holds a constant value during the lifetime of a component.
 
 const UseRef = () => {
-  const ref = useRef(null)
+  const numberRef = useRef(null)
   const inputRef = useRef(null)
 
   useEffect(() => {
-    ref.current = 3; // any value: string, object, array ...
+    numberRef.current = 3; // any value: string, object, array ...
   }, [])
+
+  console.log("numberRef: ", numberRef)
 
   return (
     <div>

@@ -1,0 +1,65 @@
+.product {
+  font-family: Helvetica;
+
+  &--unavailable {
+    color: gray;
+    .product__color {
+      &--red {
+        color: gray;
+      }
+      &--blue {
+        color: gray;
+      }
+      &--green {
+        color: gray;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: .9rem;
+  }
+
+  &__description {
+    font-size: 2rem;
+    color: #858585;
+  }
+
+  &__price {
+    color: black;
+    &--cheap {
+      color: green;
+    }
+
+    &--super-cheap{
+      color: blue;
+    }
+
+    &--super-mega-cheap{
+      color: red;
+    }
+
+  }
+  &__variant {}
+
+  &__color {
+    &--red {
+      color: red;
+    }
+    &--blue {
+      color: blue;
+    }
+    &--green {
+      color: green;
+    }
+  }
+
+  &__size {
+    font-weight: 700;
+  }
+}
