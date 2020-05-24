@@ -1,5 +1,7 @@
 import React, {useEffect, useRef} from 'react';
 
+// Exercise: create a custom useConstant hook, which holds a constant value during the lifetime of a component.
+
 const UseRef = () => {
   const ref = useRef(null)
   const inputRef = useRef(null)
