@@ -1,28 +1,21 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import useAddTwo from "./useAddTwo";
 
+// Exercise 1: make use of the useAddTwo hook
+// Exercise 2: use the useAddTwo hook to create a useMinusTwo hook
+
 const UseState = () => {
-  const [number, setNumber] = useAddTwo(0)
-  const [state1, setState1] = useState('initValue')
-  const [state2, setState2] = useState(() => {
-    // expensive computations here
-    return 'initValue'
-  })
+  // const [number, setNumber] = useAddTwo(1)
+  const [state1, setState1] = useState(0)
 
-  useEffect(() => {
-    setState1('value')
-  }, [])
-
-  useEffect(() => {
-    setState2((prevState/* initValue */) => {
-      return 'value'
-    })
-  }, [])
-
+  const handleChange = (e) => {
+    const {value} = e.target
+    setState1(value)
+  }
 
   return (
     <div>
-      UseState
+      <input type="number" onChange={handleChange} value={state1}/>
     </div>
   );
 };
