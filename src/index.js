@@ -23,8 +23,18 @@ import * as serviceWorker from './serviceWorker';
 //   return states[callId]
 // }
 //
+// function useIncrement(defaultValue) {
+//   const [counter1, setCounter1] = useState(defaultValue)
+//   const increment = () => {
+//     setCounter1(counter1 + 1)
+//   }
+//   return [counter1, increment]
+//
+// }
+//
 // const MyApp = () => {
-//   const [counter1, setCounter1] = useState(1)
+//   // const [counter1, setCounter1] = useState(1)
+//   const [counter1, increment1] = useIncrement(1)
 //   const [counter2, setCounter2] = useState(1)
 //   console.log(states)
 //   return <div>
@@ -33,7 +43,8 @@ import * as serviceWorker from './serviceWorker';
 //       <h1>
 //         {counter1}
 //       </h1>
-//       <button onClick={() => setCounter1(counter1+1)}>counter1</button>
+//       {/*<button onClick={() => setCounter1(counter1 + 1)}>counter1</button>*/}
+//       <button onClick={() => increment1()}>counter1</button>
 //     </div>
 //     <div>
 //       <h2>counter2</h2>
@@ -44,9 +55,9 @@ import * as serviceWorker from './serviceWorker';
 //     </div>
 //   </div>
 // }
-
+//
 // reRender()
-
+//
 // function reRender() {
 //   calls = -1
 //   ReactDOM.render(
