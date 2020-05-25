@@ -11,8 +11,6 @@ function compose(...fns) {
 }
 
 
-
-
 export function createStore(reducer, initState, middlewares = []) {
   let state = initState
   let subscribers = []
@@ -32,6 +30,7 @@ export function createStore(reducer, initState, middlewares = []) {
 
   function dispatch(action){
     const middlewareAction = composedMiddleware((_action) => _action )(action)
+
     state = reducer(state, middlewareAction)
 
     subscribers.forEach((subscriber) => {

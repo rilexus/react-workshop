@@ -1,5 +1,4 @@
 import React from 'react';
-import './product.scss'
 
 const getPriceClass = (price) => {
   if (price === 100) {
@@ -42,11 +41,11 @@ const Product = ({title, subtitle, description, price, variant, color, size, ava
 
   return (
     <div className={`product product--${available ? 'available' : 'unavailable'}`}>
-      <div className={'product__title'}>{title}</div>
+      <div className={`title title--first title--${color} product__title`}>{title}</div>
       <div className={'product__subtitle'}>{subtitle}</div>
       <div className={'product__description'}>{description}</div>
       <div>
-        <ProductNestedComponent price={price} className={`product__price product__price${getPriceClass()}`}/>
+        <ProductNestedComponent price={price} className={`product__price product__price${getPriceClass(price)}`}/>
       </div>
       <div className={`product__color product__color--${color}`}>{color}</div>
       <div className={'product__size'}>{size}</div>

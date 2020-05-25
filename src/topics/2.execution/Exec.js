@@ -27,24 +27,40 @@ const A = () => {
   );
 };
 
-const useState = (initValue) => {
-  let value = initValue
-  const setValue = (val) => {
-    value = val
+const createUseState = () => {
+  let value
+
+  return (initValue) => {
+    value = initValue
+    const setValue = (val) => {
+      value = val
+    }
+    return [value, setValue]
   }
-  return [value, setValue]
+
 }
+const useState = createUseState()
+
+// const useState = (initValue) => {
+//   let value = initValue
+//   const setValue = (val) => {
+//     value = val
+//   }
+//   return [value, setValue]
+// }
 
 const Exec = () => {
   console.log('Exec runs.')
-  const [val, setVal] = useState(2)
 
+  const [val, setVal] = useState(2)
   console.log('State in "Exec": ', val)
 
-  
+  setVal(4)
+
   return (
     <div>
       Exec
+      {val}
       <A/>
     </div>
   );

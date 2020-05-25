@@ -101,5 +101,10 @@ function A({p}) {
   React.createElement(B, {p: 3}));
 }
 React.createElement(A, null);
-
  */
+
+function SimpleDiv({p}) {
+  return React.createElement("div", null, "Hallo World");
+}
+
+React.createElement(SimpleDiv, null);

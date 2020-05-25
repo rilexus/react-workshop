@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+//
 // const states = []
 // let calls = -1
 //
@@ -29,14 +29,15 @@ import * as serviceWorker from './serviceWorker';
 //     setCounter1(counter1 + 1)
 //   }
 //   return [counter1, increment]
-//
 // }
 //
 // const MyApp = () => {
 //   // const [counter1, setCounter1] = useState(1)
 //   const [counter1, increment1] = useIncrement(1)
+//
 //   const [counter2, setCounter2] = useState(1)
 //   console.log(states)
+//
 //   return <div>
 //     <div>
 //       <h2>counter1</h2>

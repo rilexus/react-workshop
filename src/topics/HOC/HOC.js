@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from "react";
 
+
+
 function withUserApi (Component) {
+
   async function fetchUser(byID) {
     return new Promise((res)=>{
       setTimeout(() => {
@@ -12,19 +15,32 @@ function withUserApi (Component) {
   return (props) => <Component {...props} fetchUser={fetchUser}/>
 }
 
-const UserList = ({fetchUser}) => {
+const UserList = ({fetch}) => {
   const [user, setUser] = useState({name: ''})
 
   useEffect(() => {
-    fetchUser('id').then((user) => {
+    fetch('id').then((user) => {
       setUser(user)
     })
 
   })
 
-  return <div>
-    {user.name}
-  </div>
+  return (
+    <div>
+      {user.name}
+    </div>
+  )
 }
+
+
+function withUserData(Component) {
+
+  const user = {name: "stan"}
+
+  return (props) => {
+    return <Component {...props} user={user}/>
+  }
+}
+
 
 export const WithFetchUserComponent = withUserApi(UserList)

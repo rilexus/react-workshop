@@ -1,0 +1,17 @@
+.title {
+  font-size: 1rem;
+  margin: 20px;
+  &--red {
+    color: red;
+  }
+  &--first {
+    font-size: 3rem;
+  }
+  &--second {
+    font-size: 2rem;
+  }
+  &--third {
+    font-size: 2rem;
+  }
+
+}

@@ -13,6 +13,19 @@ const A = ({s}) => {
   </div>
 }
 
+// const A = ({s}) => {
+//   return React.createElement(
+//     "div",
+//     null,
+//     "1",
+//     React.createElement("div", null, "2",
+//       React.createElement("div", null, "3"),
+//       React.createElement("button", null, "click")));
+// };
+//
+// React.createElement(A, null);
+
+
 const root = document.getElementById('root');
 ReactDOM.render(<A s={2}/>, root)
 
