@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {connect} from "../store/connect";
 
-const _Some = ({greeting, stateCount, greet, dispatchPromise, dispatchFunction}) => {
-
+const _Some = ({greeting, stateCount, greet, dispatch, dispatchPromise, dispatchFunction}) => {
+  // dispatch({type: 'ACTION_TYPE"})
   return (
     <div>
       <div>
@@ -41,6 +41,7 @@ const mapProps = (state) => {
 
 const mapDispatch = (dispatch) => {
   return {
+    dispatch: dispatch,
     dispatchFunction: () => dispatch(fetchUser('id')),
     dispatchPromise: () => dispatch(new Promise((res) => {
       setTimeout(res, 2000)

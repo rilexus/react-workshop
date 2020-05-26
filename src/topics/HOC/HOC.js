@@ -1,46 +1,35 @@
 import React, {useEffect, useState} from "react";
 
 
+const Component = (props) => <div>Component</div>
 
-function withUserApi (Component) {
+const getComponent = () => {
+  return () => <div>Component</div>
+}
 
-  async function fetchUser(byID) {
-    return new Promise((res)=>{
-      setTimeout(() => {
-        res({name: 'Stan'})
-      }, 2000)
-    })
+const getComponent2 = (args) => {
+  return (props) => <div {...props} {...args}>Component</div>
+}
+
+
+const getComponent3 = () => {
+  const func = (event) => {
+    // handle event
   }
-
-  return (props) => <Component {...props} fetchUser={fetchUser}/>
+  return (props) => <div {...props} onClick={func}>Component</div>
 }
 
-const UserList = ({fetch}) => {
-  const [user, setUser] = useState({name: ''})
-
-  useEffect(() => {
-    fetch('id').then((user) => {
-      setUser(user)
-    })
-
-  })
-
-  return (
-    <div>
-      {user.name}
-    </div>
-  )
+const getComponent4 = (Component) => {
+  return (props) => <Component/>
 }
 
+const getComponent5 = (Component) => {
+  return (props) => <Component {...props}/>
+}
 
-function withUserData(Component) {
-
-  const user = {name: "stan"}
-
-  return (props) => {
-    return <Component {...props} user={user}/>
+const getComponent6 = (Component) => {
+  const func = (event) => {
+    // handle event
   }
+  return (props) => <Component {...props} onClick={func}/>
 }
-
-
-export const WithFetchUserComponent = withUserApi(UserList)

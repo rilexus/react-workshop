@@ -1,0 +1,1 @@
+export const fetchUsers = async () => (await(await fetch('https://reqres.in/api/users?page=2', {method: 'get', /* pass authToken here */})).json()).data;

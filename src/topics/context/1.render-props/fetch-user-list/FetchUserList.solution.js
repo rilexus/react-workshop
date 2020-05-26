@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {fetchUsers} from "./fetchUsers";
+import {fetchUsers} from "../../../../fetchUsers";
 
 const FetchUserListSolution = ({children, authToken}) => {
   const [us, setUsers] = useState([])

@@ -5,7 +5,7 @@ import Product from "./topics/SCSS/refactored-bem/Product";
 import product from './topics/SCSS/BEM/product.json'
 import {BasicContextComponent} from "./topics/context/Basic";
 import {UsersList} from "./topics/context/1.render-props/fetch-user-list/FetchUserList.solution";
-import Exec from "./topics/2.execution/Exec";
+import Exec from "./topics/execution/Exec";
 
 function App() {
   console.log('App runs.')
