@@ -1,9 +1,9 @@
 import React from 'react';
 
+
 const ProductSize = ({children}) => {
-  return (
-    <div className={'product__size'}>{children}</div>
-  );
+
+  return <ProductSizeStyledWrapper>{children}</ProductSizeStyledWrapper>
 };
 
 export default ProductSize;

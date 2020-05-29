@@ -39,6 +39,19 @@ const mapProps = (state) => {
   }
 }
 
+const ACTION_TYPE = 'SOME_ACTION'
+function actionCreator(data) {
+  return {
+    type: ACTION_TYPE,
+    payload: {data}
+  }
+}
+function doSomeStuff(data, dispatch) {
+  // do stuff here
+  dispatch(actionCreator(data))
+  // and do stuff here
+}
+
 const mapDispatch = (dispatch) => {
   return {
     dispatch: dispatch,
@@ -47,6 +60,7 @@ const mapDispatch = (dispatch) => {
       setTimeout(res, 2000)
     })),
     greet: (word, count) => dispatch({type: 'ACTION-TYPE', payload: {word, count}}),
+    some: (data) => doSomeStuff(data, dispatch),
   }
 }
 

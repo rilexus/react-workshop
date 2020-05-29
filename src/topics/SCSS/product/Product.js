@@ -4,7 +4,7 @@ import ProductSubtitle from "./components/ProductSubtitle";
 import ProductDescription from "./components/ProductDescription";
 import ProductPrice from "./components/ProductPrice";
 import ProductColor from "./components/ProductColor";
-import ProductSize from "./components/ProductSize";
+import ProductSize from "./product-size/ProductSize";
 
 const ProductWrapper = ({children, available}) => {
   return <div className={`product product--${available ? 'available' : 'unavailable'}`}>
